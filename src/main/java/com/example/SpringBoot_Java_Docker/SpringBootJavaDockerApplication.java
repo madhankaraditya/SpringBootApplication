@@ -11,7 +11,7 @@ public class SpringBootJavaDockerApplication {
 
 	@GetMapping("/welcome")
 	public String welcome(){
-		return "Welcome to my new project"
+		return "Welcome to my new project";
 	}
 
 	public static void main(String[] args) {
