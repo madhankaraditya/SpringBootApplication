@@ -1,5 +1,10 @@
 name: Java with Maven
 
+permissions:
+  contents: write
+  dependencies: write
+
+
 on:
   push:
     branches: [ "master" ]
