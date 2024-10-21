@@ -10,7 +10,8 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn -v' // Check Maven version
+                sh 'mvn clean install -X' // Build with Maven and enable debug output
             }
         }
 
@@ -25,9 +26,6 @@ pipeline {
         stage('Deploy Docker Image') {
             steps {
                 script {
-                    // Push Docker image to the server (Optional: If using a private registry)
-                    // dockerImage.push('latest')
-                    
                     // Run Docker container on the server
                     sh """
                         docker stop springboot_app || true
